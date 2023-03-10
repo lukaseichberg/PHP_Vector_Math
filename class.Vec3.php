@@ -77,6 +77,14 @@ class Vec3 {
     return $this->x * $v->x + $this->y * $v->y + $this->z * $v->z;
   }
   
+  public function cross(Vec3 $v):Vec3 {
+    return new Vec3(
+      $this->y * $v->z - $this->z * $v->y,
+      $this->z * $v->x - $this->x * $v->z,
+      $this->x * $v->y - $this->y * $v->x
+    );
+  }
+  
   public function mag():float {
     return sqrt($this->dot($this));
   }
