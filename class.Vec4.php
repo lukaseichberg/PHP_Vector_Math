@@ -73,7 +73,7 @@ class Vec4 {
     $this->z /= $scalar;
     $this->w /= $scalar;
   }
-  
+  /*  TODO: lerp function
   public function lerp(Vec4 $v, $value):Vec4 {
     return new Vec4(
       lerp($this->x, $v->x, $value),
@@ -82,7 +82,7 @@ class Vec4 {
       lerp($this->w, $v->w, $value)
     );
   }
-  
+  */
   public function dot(Vec4 $v):float {
     return $this->x * $v->x + $this->y * $this->y + $this->z * $this->z + $this->w * $this->w;
   }
