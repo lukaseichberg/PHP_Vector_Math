@@ -44,7 +44,7 @@ class Vec2 {
     $this->y *= $scalar;
   }
   
-  public function div($scalar):Vec3 {
+  public function div($scalar):Vec2 {
     return new Vec2(
       $this->x / $scalar,
       $this->y / $scalar
@@ -55,14 +55,14 @@ class Vec2 {
     $this->x /= $scalar;
     $this->y /= $scalar;
   }
-  
-  public function lerp(Vec2 $v, $value) {
+  /*  TODO: lerp function
+  public function lerp(Vec2 $v, $value):Vec2 {
     return new Vec2(
       lerp($this->x, $v->x, $value),
       lerp($this->y, $v->y, $value)
     );
   }
-  
+  */
   public function dot(Vec2 $v):float {
     return $this->x * $v->x + $this->y * $v->y;
   }
@@ -71,11 +71,11 @@ class Vec2 {
     return sqrt($this->dot($this));
   }
   
-  public function normal() {
+  public function normal():Vec2 {
     return $this->div($this->mag());
   }
   
-  public function normalize() {
+  public function normalize():void {
     $this->_div($this->mag());
   }
   
